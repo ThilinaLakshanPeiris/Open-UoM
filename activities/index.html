@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <p id="pid">this is a paragraph</p>
+    <button id="bid">click me</button>
+    <button id="dbid">double click me</button>
+    <button id="pid1">click me</button>
+    <button class="hide">hide</button>
+    <button class="show">show</button>
+    <button class="toggle">toggle</button>
+    <p class="pfast">this is a paragraph</p>
+    <p class="pslow">this is a paragraph</p>
+    <p class="pclass">this is a paragraph</p>
+    <script>
+       
+        $(document).ready(function(){
+            $('#pid').click(function(){
+            alert('clicked hambooo !');
+            });
+            $('#bid').click(function(){
+                $(this).hide();
+            });
+            $('#dbid').dblclick(function(){
+                $(this).hide();
+            });
+            $('#pid1').hover(function(){
+                $(this).css('background-color','pink');
+            });
+
+            $('.hide').click(function(){
+                $('p.pfast').hide('fast');
+                $('p.pslow').hide('slow');
+                $('p.pclass').hide('2000');
+            });
+            $('.show').click(function(){
+                $('p.pfast').show('fast');
+                $('p.pslow').show('slow');
+                $('p.pclass').show('2000');
+            });
+            $('.toggle').click(function(){
+                $('p.pfast').toggle('fast');
+                $('p.pslow').toggle('slow');
+                $('p.pclass').toggle('2000');
+            });
+
+        });
+
+        // document.getElementById('pid').onclick = function(){
+        //     alert('clicked !');
+        // }
+    </script>
+</body>
+</html>
